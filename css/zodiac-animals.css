@@ -1,5 +1,5 @@
 :root {
-    --colr: #922;
+    --colr: #c91921;
 }
 
 body {
@@ -7,17 +7,18 @@ body {
     font-family: sans-serif;
     color: var(--colr);
     background-color: var(--colr);
+    background-color: #000;
 }
 
 .container {
     text-align: center;
     width: 700px;
     min-height: 50vh;
-    background-color: #eee;
-    margin: 1.5rem 1.5rem 0 auto;
+    background-color: #fff;
+    margin: 2.5rem 2.5rem 0 auto;
     padding: 0.75rem;
     border-radius: 1rem;
-    border: 3px solid #888;
+    /* border: 3px solid #888; */
 }
 
 h1 + div {
@@ -85,6 +86,8 @@ section {
     color: #441;
     text-align: center;
     cursor: pointer;
+    box-shadow: 0.5rem 0.5rem 0.5rem #33000080;
+
 }
 
 .animal-pic {
@@ -143,10 +146,10 @@ section {
     position: absolute;
     /* cursor: pointer; */
     padding: 0;
-    left: 1.5rem;
-    top: 2.5rem;
-    width: 600px;
+    left: 3rem;
+    top: 3rem;
+    width: 45%;
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 1rem 1rem 1rem #33000060;
+    /* box-shadow: 1rem 1rem 1rem #33000060; */
 }
