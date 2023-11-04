@@ -39,6 +39,11 @@ select, input, label {
     margin: 0 0.5rem;
 }
 
+select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+}
+
 label {
     margin-right: 1.75rem;
     margin-left: 0.25rem;
