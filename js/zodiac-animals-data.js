@@ -12,8 +12,18 @@ let animalsObjArr = [
     {eng: "snake", chr: "she", chi: "she", pin: "she&#769;", year: 2025},
     {eng: "tiger", chr: "hu", chi: "laohu", pin: "la&#780;ohu&#780;", year: 2022} 
 ];
-// eng: English name (for concatenating animal image file)
-// chr: Chinese character Romanized; Chinese name sometimes longer
-// chi: Chinese name (for concatenating character image file)
-// pin: Pinyin spelling (Romanization with tone markings)
-// year: in 12-year cycle (2020-2031)
+// eng: English name 
+//     - for concatenating animal image file 
+//     - for sorting by English name
+//     - for displaying English name of animal
+// chr: Chinese character Romanized 
+//     - for concatenating Chinese character image file
+// chi: Chinese name (sometimes same as chr, sometimes longer)
+//     - for  sorting by Chinese name
+// pin: Pinyin spelling (Romanization w tone markings)
+//     - for displaying Pinyin spelling of animal
+// year: in 12-year cycle
+//     - for concatenating sets of years in 12 yr increments
+//     - for sorting by Year
+ 
+
