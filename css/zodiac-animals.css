@@ -1,0 +1,136 @@
+:root {
+    --colr: #922;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: var(--colr);
+    background-color: var(--colr);
+}
+
+.container {
+    text-align: center;
+    min-width: 600px;
+    max-width: 1200px;
+    min-height: 50vh;
+    background-color: #eee;
+    margin: 0.5rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 3px solid #888;
+}
+
+h1 + div {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #888;
+    border-radius: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+select, input, label {
+    /* padding: 5px 7px; */
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--colr);
+    margin: 0 0.5rem;
+}
+
+label {
+    margin-right: 1.75rem;
+    margin-left: 0.25rem;
+}
+
+input {
+    margin-left: 2rem;
+}
+
+h1 {
+    font-size: 1.33rem;
+}
+
+section {
+    background-color: var(--colr);
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-height: 80vh;
+    margin: 2rem auto;
+    text-align: center;
+    border-radius: 15px;
+    overflow-y: auto;
+    width: 1150px;
+}
+
+.divvy {
+    position: relative;
+    display: inline-block;
+    margin: 7px 5px 10px 5px;
+    background-color: #fff;
+    padding: 10px;
+    width: 150px;
+    height: 230px;
+    border-radius: 10px;
+    border: 3px solid var(--colr);
+    color: #441;
+    text-align: center;
+    cursor: pointer;
+}
+
+.animal-pic {
+    width: 80%;
+    height: auto;
+    margin: 40px 0px 0px 25px;
+}
+
+.sound-icon, span, .chinese-char, .zodiac-year, .pinyin {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+}
+
+.chinese-char {
+    top: 190px;
+    right: 65px;
+    width: 47px;
+    height: 47px;
+    /* display: none; */
+}
+
+.zodiac-year { 
+    top: 5px;
+    left: 5px;
+    font-size: 0.85rem;
+    width: 42px;
+    height: 95%;
+    display: inline;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1rem;
+    color: var(--colr);
+}
+
+.english {
+    font-size: 1.33rem;
+    position: absolute;
+    top: 5px;
+    right: 50%;
+    color: var(--colr);
+}
+
+.pinyin {
+    top: 200px;
+    right: 23%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
