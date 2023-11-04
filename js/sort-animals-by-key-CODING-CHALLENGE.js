@@ -72,3 +72,6 @@ function sortAnimals() {
     if(descCB.checked) animals.reverse(); // if Descending is checked; reverse sort:
     renderAnimals(); // re-render the newly sorted animals
 }
+
+const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
+setInterval(() => wheel.style.transform += 'rotate(0.25deg)', 25);

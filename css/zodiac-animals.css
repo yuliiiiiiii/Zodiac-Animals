@@ -15,8 +15,8 @@ body {
     max-width: 1200px;
     min-height: 50vh;
     background-color: #eee;
-    margin: 1.5rem auto;
-    padding: 2rem;
+    margin: 0.75rem 0.75rem 0 auto;
+    padding: 0.75rem;
     border-radius: 1rem;
     border: 3px solid #888;
 }
@@ -33,15 +33,15 @@ h1 + div {
 
 select, input, label {
     /* padding: 5px 7px; */
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--colr);
     margin: 0 0.5rem;
 }
 
 select {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.75rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem;
 }
 
 label {
@@ -51,6 +51,7 @@ label {
 
 input {
     margin-left: 2rem;
+    margin-bottom: 0.75rem;
 }
 
 h1 {
@@ -138,4 +139,15 @@ section {
     right: 23%;
     font-size: 1rem;
     letter-spacing: 1px;
+}
+
+.wheel {
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 290px;
+    border-radius: 50%;
+    z-index: 1;
 }
