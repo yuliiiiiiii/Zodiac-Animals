@@ -125,9 +125,9 @@ section {
 }
 
 .english {
-    font-size: 1.33rem;
+    font-size: 1.25rem;
     position: absolute;
-    top: 5px;
+    top: 0px;
     right: 50%;
     color: var(--colr);
 }
