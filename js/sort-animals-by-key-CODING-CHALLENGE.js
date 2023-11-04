@@ -1,107 +1,74 @@
-// CODING CHALLENGE: 
-// Provide the missing code 
-// wherever you see CHALLENGE
+// L@@K CHALLENGE !!: SORTING ARRAY of OBJECTS by NUM and STR KEYS
+// Provide the missing code in the 3 spots that say "L@@K CHALLENGE !!"
 
-// get the section that will hold all the animals
-const section = document.querySelector('section');
-// get the select menu for sorting animals
-const sortMenu = document.querySelector('select');
-// sortMenu calls sortAnimals() function on change:
-sortMenu.addEventListener('change', sortAnimals);
+const arr = [...animals]; // copy array of animal obj, so as not to change original
+const section = document.querySelector('section'); // get section that holds animals
+const menu = document.querySelector('select'); // get menu for choosing sort order
+menu.addEventListener('change', sortAnimals); // call function on menu change
+const descCB = document.querySelector('input'); // get Descending checkbox
+// checkbox calls function on change; this function is short, so we can just 
 
-// CHALLENGE: get the sort Descending checkbox:
-// and have it call the reverseSort function whenever
-// checkbox is changed
+// L@@K CHALLENGE !!
+//  write function that runs when checkbox is checked or unchecked
+// - this code is very short, so rather than declare a function for this
+// - write an anonymous inline callback function right inside the addEventListener
+// - function calls reverse() method on the array to reverse the order of objects
+// - function ends by calling the renderAnimals() function
 
-// renderAnimals() runs on page load and whenever 
-// change is made to the select menu or checkbox
-// loop the array of animals objects data in the file
-// zodiac-animals-data.js
-function renderAnimals() {
-
-    section.innerHTML = ""; // clear existing animals
-    // loop the obj array of animals:
-    animalsObjArr.forEach((animal, i) => {
-
-        // make a div to hold the animal
-        const divvy = document.createElement('div');
+function renderAnimals() { // output the 12 animals to the section
+    section.innerHTML = ""; // clear section to make way for fresh output
+    arr.forEach(animal => { // loop the array of animal objects
+        const divvy = document.createElement('div'); // make a div
         divvy.className = 'divvy'; // assign class to div
         section.appendChild(divvy); // output div to section
-        
-        // make an image to put in the div
-        const pic = new Image();
-        pic.className = 'animal-pic'; // assign class to div
-        
-        // concatenate src file path to animal jpg:
-        pic.src = `images/animals/${animal.eng}.jpg`;
-        
-        // output the animal image inside divvy:
-        divvy.appendChild(pic);
-        
-        // CHALLENGE: make image to hold Chinese character
-        // and concat src file path to character jpg 
-        
-        // output img to divvy:
-        divvy.appendChild(char);
-
-        // make a span tag to hold the English name of the animal
+        const animalImg = new Image(); // make an image
+        animalImg.src = `images/animals/${animal.eng}.jpg`; // concat path to jpg
+        animalImg.className = 'animal-pic'; // assign class to animal img
+        divvy.appendChild(animalImg); // output the image inside the div:
+        const charImg = new Image(); // make image to hold Chinese character
+        charImg.src = `images/chars/char-${animal.chr}.jpg`; // concat path to char jpg:
+        charImg.className = 'chinese-char'; // assign class to character img
+        divvy.appendChild(charImg);
+        // make a span tag to hold English name of animal
         const engSpan = document.createElement('span');
         engSpan.className = 'english';
         engSpan.textContent = animal.eng;
         divvy.appendChild(engSpan); // output Eng name to divvy
-        
-        // CHALLENGE: make span tag to hold Pinyin name
-        
-        // make a p tag to hold a series of animal years
-        const pTag = document.createElement('p');
-        pTag.className = 'zodiac-year'; // assign class to p-tag
-        divvy.appendChild(pTag); // append p tag to divvy
-
-        // concat year series, start w current year:
-        let yearSeries = animal.year + ' ';
-
-        // CHALLENGE: concat onto yearSeries in a loop, 
-        // in increments of 12 years 
+        // make a span tag to hold Pinyin name of animal
+        const pinSpan = document.createElement('span');
+        pinSpan.className = 'pinyin';
+        pinSpan.innerHTML = animal.pin; // can't use textContent, due to HTML entities
+        divvy.appendChild(pinSpan); // output Pin name to divvy
+        // make a p tag to hold a string of animal years in 12 year intervals
+        const yearsP = document.createElement('p');
+        yearsP.className = 'zodiac-year'; // assign class to p-tag
+        divvy.appendChild(yearsP); // append p tag to divvy
+        // run a loop that starts w current year, and concats
+        // years backwards in time, in increments of 12 years 
+        let yearsStr = animal.year + " ";
+       
+        // L@@K CHALLENGE !! -- write the for loop that concats the yearsStr
         // for(?; ?; ?) {
-            // yearSeries;
         // }
 
-        pTag.textContent = yearSeries; // put animal yr string in p-tag
-    
+        yearsP.textContent = yearsStr; // put animal yr string in p-tag
     }); // end forEach()
 } // end renderAnimals() function
 
-// render animals on page load. 
-// Default sort order is by English name, ascending
-renderAnimals();
+renderAnimals(); // render animals on page load; default order is by Eng, asc
 
-// CHALLENGE: sortAnimals() runs on change to select menu:
+// sortAnimals() runs on change to select menu:
 function sortAnimals() {
 
-    // clear the section to make way for fresh output
+    section.innerHTML = ""; // clear section to make way for fresh output
+    let k = menu.value; // get menu value, which is sort key "eng", "chi" or "yr"
     
-    // get the value of the select menu: eng, chi or year
-    // these are the 3 possible sort keys
-    
-    // if sortKey is year, use the sort by number key algo:
-    
-        // num key sort
-    // key is "eng" or "pin", so do string key sort
-        // don't know which key, so use var key accessor: obj[var]
-    
-    // The sort is in ascending order, but the Descending checkbox
-    // may be checked; if so, reverse the sort:
-        // Descending checkbox is checked
+    // L@@K CHALLENGE !! -- write the sort logic that sorts by key
+    // if sort key is "yr" (year), which is a number, do a number-key sort
+    // else sort key is "eng" or "chi", which are strings, so do a string-key sort
+    // use dynamic obj key accessor syntex: [k], where k is either "eng" or "chi":
+    // do this as an if-else OR BONUS: use a ternary to do it ALL in ONE line
 
-    // the sort is done, so re-render the animals:
-
-}
-
-// CHALLENGE: reverseSort() runs whenever checkbox is checked or unchecked:
-function reverseSort() {
-
-  // reverse the sort order with reverse() method
-
-  // call the renderAnimals() function to re-render all
-  
+    if(descCB.checked) animals.reverse(); // if Descending is checked; reverse sort:
+    renderAnimals(); // re-render the newly sorted animals
 }
