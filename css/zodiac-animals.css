@@ -33,7 +33,7 @@ h1 + div {
 
 select, input, label {
     /* padding: 5px 7px; */
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: bold;
     color: var(--colr);
     margin: 0 0.5rem;
