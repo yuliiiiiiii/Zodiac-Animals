@@ -41,7 +41,7 @@ function renderAnimals() { // output the 12 animals to the section
         // years backwards in time, in increments of 12 years 
         let yearsStr = animal.yr + " "; // start a string of years, beginning w current year
         for(let y = 12; y <= 168; y += 12) { // run a loop from 12-168 in increments of 12
-            yearsStr += (arr.yr - y) + " "; // concat the next year in 12-year cycle
+            yearsStr += (animal.yr - y) + " "; // concat the next year in 12-year cycle
         }
         yearsP.textContent = yearsStr; // output animal yr string to p-tag
     }); // end forEach()
