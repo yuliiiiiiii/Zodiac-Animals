@@ -11,11 +11,10 @@ body {
 
 .container {
     text-align: center;
-    min-width: 600px;
-    max-width: 1200px;
+    width: 700px;
     min-height: 50vh;
     background-color: #eee;
-    margin: 0.75rem 0.75rem 0 auto;
+    margin: 1.5rem 1.5rem 0 auto;
     padding: 0.75rem;
     border-radius: 1rem;
     border: 3px solid #888;
@@ -32,7 +31,6 @@ h1 + div {
 }
 
 select, input, label {
-    /* padding: 5px 7px; */
     font-size: 1.1rem;
     font-weight: bold;
     color: var(--colr);
@@ -59,6 +57,8 @@ h1 {
 }
 
 section {
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--colr);
     text-align: center;
     color: white;
@@ -66,11 +66,10 @@ section {
     font-size: 1.5rem;
     font-weight: bold;
     max-height: 80vh;
-    margin: 2rem auto;
+    margin: 1rem auto;
     text-align: center;
     border-radius: 15px;
     overflow-y: auto;
-    width: 1150px;
 }
 
 .divvy {
@@ -79,8 +78,8 @@ section {
     margin: 7px 5px 10px 5px;
     background-color: #fff;
     padding: 10px;
-    width: 150px;
-    height: 230px;
+    width: 135px;
+    height: 180px;
     border-radius: 10px;
     border: 3px solid var(--colr);
     color: #441;
@@ -91,7 +90,7 @@ section {
 .animal-pic {
     width: 80%;
     height: auto;
-    margin: 40px 0px 0px 25px;
+    margin: 20px 0px 0px 25px;
 }
 
 .sound-icon, span, .chinese-char, .zodiac-year, .pinyin {
@@ -105,11 +104,10 @@ section {
 }
 
 .chinese-char {
-    top: 190px;
-    right: 65px;
-    width: 47px;
-    height: 47px;
-    /* display: none; */
+    top: 140px;
+    right: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 .zodiac-year { 
@@ -145,9 +143,10 @@ section {
     position: absolute;
     cursor: pointer;
     padding: 0;
-    left: 0.5rem;
-    top: 0.5rem;
-    width: 290px;
+    left: 1.5rem;
+    top: 2.5rem;
+    width: 700px;
     border-radius: 50%;
     z-index: 1;
+    box-shadow: 1rem 1rem 1rem #33000060;
 }
