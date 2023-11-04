@@ -39,11 +39,11 @@ function renderAnimals() { // output the 12 animals to the section
         divvy.appendChild(yearsP); // append p tag to divvy
         // run a loop that starts w current year, and concats
         // years backwards in time, in increments of 12 years 
-        let yearsStr = animal.yr + " "; // string of years begins w current year
-        for(let y = 12; y <= 132; y += 12) { // loop from 12-168 in increments of 12
-            yearsStr += (animal.yr - y) + " "; // concat next year in the cycle
+        let yearsStr = `<span> ${animal.yr} </span><br><br>`; // string of years begins w current year
+        for(let y = 12; y <= 120; y += 12) { // loop from 12-168 in increments of 12
+            yearsStr += (animal.yr - y) + "<br>"; // concat next year in the cycle
         }
-        yearsP.textContent = yearsStr; // output animal yr string to p-tag
+        yearsP.innerHTML = yearsStr; // output animal yr string to p-tag
     }); // end forEach()
 } // end renderAnimals() function
 
