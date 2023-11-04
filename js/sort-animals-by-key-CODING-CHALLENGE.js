@@ -48,6 +48,7 @@ function renderAnimals() { // output the 12 animals to the section
         let yearsStr = animal.year + " ";
        
         // L@@K CHALLENGE !! -- write the for loop that concats the yearsStr
+        // there should be a total of 12 years: 2020 2008 1996 1984 1972 1960
         // for(?; ?; ?) {
         // }
 
@@ -74,4 +75,4 @@ function sortAnimals() {
 }
 
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
-setInterval(() => wheel.style.transform += 'rotate(0.25deg)', 25);
+setInterval(() => wheel.style.transform += 'rotate(0.1deg)', 25);

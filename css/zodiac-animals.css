@@ -88,7 +88,7 @@ section {
 }
 
 .animal-pic {
-    width: 80%;
+    width: 73%;
     height: auto;
     margin: 20px 0px 0px 25px;
 }
@@ -104,10 +104,10 @@ section {
 }
 
 .chinese-char {
-    top: 140px;
-    right: 50px;
-    width: 45px;
-    height: 45px;
+    top: 145px;
+    right: 40px;
+    width: 43px;
+    height: 43px;
 }
 
 .zodiac-year { 
@@ -133,9 +133,9 @@ section {
 }
 
 .pinyin {
-    top: 200px;
-    right: 23%;
-    font-size: 1rem;
+    top: 120px;
+    right: 40%;
+    font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
