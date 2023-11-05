@@ -15,7 +15,7 @@ body {
     width: 700px;
     min-height: 50vh;
     background-color: #fff;
-    margin: 2.5rem 2.5rem 0 auto;
+    margin: 0 auto;
     padding: 0.75rem;
     border-radius: 1rem;
     /* border: 3px solid #888; */
@@ -144,6 +144,7 @@ span, .chinese-char, .zodiac-year, .pinyin {
 }
 
 .wheel {
+    display: none;
     position: absolute;
     /* cursor: pointer; */
     padding: 0;
