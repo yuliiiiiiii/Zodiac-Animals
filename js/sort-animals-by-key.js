@@ -3,11 +3,16 @@ const section = document.querySelector('section'); // get section that holds ani
 const menu = document.querySelector('select'); // get menu for choosing sort order
 menu.addEventListener('change', sortAnimals); // call function on menu change
 const descCB = document.querySelector('input'); // get Descending checkbox
+
+const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
+setInterval(() => wheel.style.transform += 'rotate(0.05deg)', 25);
+
 // checkbox calls function on change; this function is short, so we can just 
 // write it as an anonymous inline callback function:
 descCB.addEventListener('change', () => {
     arr.reverse();
     renderAnimals();
+    // orderWheelSlices();
 });
 
 function renderAnimals() { // output the 12 animals to the section
@@ -29,6 +34,7 @@ function renderAnimals() { // output the 12 animals to the section
         divvy.appendChild(charImg); // output the character image to the div
         const engSpan = document.createElement('span'); // make a span tag
         engSpan.className = 'english'; // assign class to span tag
+        engSpan.textContent = animal.eng; // output Pinyin text to span (HTML entities require innerHTML)
         engSpan.i = i; // output English name text to span tag
         divvy.appendChild(engSpan); // output span tag to divvy
         // make a span tag to hold Pinyin name of animal
@@ -72,6 +78,7 @@ function sortAnimals() {
     k == "yr" ? arr.sort((a,b) => a.yr - b.yr) : arr.sort((a,b) => a[k] > b[k] ? 1 : -1);
     if(descCB.checked) arr.reverse(); // if Descending is checked; reverse sort
     renderAnimals(); // re-render the sorted animals
+    // orderWheelSlices();
 }
 
 let infoShowing = false;
@@ -82,5 +89,29 @@ function showHideInfo() {
     infoShowing = !infoShowing; // flip boolean
 }
 
-const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
-setInterval(() => wheel.style.transform += 'rotate(0.05deg)', 25);
+// output wheel slices in sort order
+// function orderWheelSlices() {
+//     // alert('order wheel slices');
+//     const wheelSliceHolderDiv = document.createElement('div');
+//     document.body.appendChild(wheelSliceHolderDiv);
+//     wheelSliceHolderDiv.className = 'wheel-slice-holder';
+//     let z = 1;
+//     let leftPos = 230;
+//     let topPos = 0;
+//     let rotAngle = 0;
+//     const animalNames = ['dog', 'dragon', 'horse'];
+//     for(let i = 0; i < 3; i++) {
+//         const wheelSlice = new Image();
+//         wheelSlice.src = `images/wheel-slices/${animalNames[i]}-wheel-slice.png`;
+//         wheelSlice.className = 'wheel-slice-img';
+//         // z++;
+//         rotAngle += 30;
+//         leftPos += 15;
+//         topPos += 40;
+//         wheelSlice.style.zIndex = (i+2);
+//         wheelSlice.style.transform = `rotate(${rotAngle}deg)`;
+//         wheelSlice.style.left = leftPos + "px";
+//         wheelSlice.style.top = topPos + "px";
+//         wheelSliceHolderDiv.appendChild(wheelSlice);
+//     }
+// }

@@ -201,3 +201,28 @@ span, .chinese-char, .zodiac-year, .pinyin {
     margin: 0;
     font-size: 1rem;
 }
+
+.wheel-slice-holder {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    /* border: 6px dashed yellow; */
+    left: 6rem;
+    top: 6rem;
+    width: 475px;
+    height: 475px;
+    border-radius: 250px;
+    font-size: 0.85rem;
+    opacity: 1;
+}
+
+
+.wheel-slice-img {
+    position: absolute;
+    width: 150px;
+    top: 15px;
+    /* transform: rotate(0deg); */
+    border: 5px dashed yellow;
+    transform-origin: "right bottom";
+    /* filter: invert(); */
+}
