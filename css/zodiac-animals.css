@@ -89,7 +89,7 @@ section {
     border: 3px solid var(--colr);
     color: #441;
     text-align: center;
-    box-shadow: 0.5rem 0.5rem 0.5rem #33000080;
+    box-shadow: 5px 5px 5px #33000070; /* last 2 digits are % opacity */
 
 }
 
