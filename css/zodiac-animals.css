@@ -17,8 +17,9 @@ body {
     background-color: #fff;
     margin: 0 auto;
     padding: 0.75rem;
-    border-radius: 1rem;
-    /* border: 3px solid #888; */
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
 }
 
 h1 + div {
@@ -69,7 +70,9 @@ section {
     max-height: 80vh;
     margin: 1rem auto;
     text-align: center;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     overflow-y: auto;
     box-shadow: 0rem 1rem 1rem #33000080;
 }
