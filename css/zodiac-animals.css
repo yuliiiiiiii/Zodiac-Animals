@@ -13,13 +13,11 @@ body {
 .container {
     text-align: center;
     width: 700px;
-    min-height: 50vh;
     background-color: #fff;
-    margin: 0 auto;
-    padding: 0.75rem;
+    margin: 0 10% 0 auto;
+    padding: 0.25rem 1rem;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
-
 }
 
 h1 + div {
@@ -55,7 +53,11 @@ input {
 }
 
 h1 {
-    font-size: 1.33rem;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
 }
 
 section {
@@ -147,13 +149,13 @@ span, .chinese-char, .zodiac-year, .pinyin {
 }
 
 .wheel {
-    display: none;
+    /* display: none; */
     position: absolute;
     /* cursor: pointer; */
     padding: 0;
-    left: 3rem;
-    top: 3rem;
-    width: 45%;
+    left: 6rem;
+    top: 6rem;
+    width: 500px;
     border-radius: 50%;
     z-index: 1;
     /* box-shadow: 1rem 1rem 1rem #33000060; */
@@ -179,4 +181,23 @@ span, .chinese-char, .zodiac-year, .pinyin {
     right: 10px;
     width: 22px;
     height: 22px;
+}
+
+.animal-info {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    background-color: #fff;
+    left: -10px;
+    top: -10px;
+    font-size: 0.85rem;
+    opacity: 0
+}
+
+.animal-name {
+    color: var(--colr);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    font-size: 1rem;
 }
