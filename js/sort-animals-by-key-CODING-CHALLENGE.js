@@ -74,5 +74,9 @@ function sortAnimals() {
     renderAnimals(); // re-render the newly sorted animals
 }
 
+function playSound() {
+    // 
+}
+
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
 setInterval(() => wheel.style.transform += 'rotate(0.1deg)', 25);

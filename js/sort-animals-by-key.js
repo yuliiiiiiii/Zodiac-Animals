@@ -44,6 +44,13 @@ function renderAnimals() { // output the 12 animals to the section
             yearsStr += (animal.yr - y) + "<br>"; // concat next year in the cycle
         }
         yearsP.innerHTML = yearsStr; // output animal yr string to p-tag
+        
+        const soundIcon = new Image(); // make img for sound icon
+        soundIcon.src = "images/sound-icon.png"; // set src
+        soundIcon.className = 'sound-icon'; // add class
+        soundIcon.eng = animal.eng;
+        soundIcon.addEventListener('click', playSound); // call func on click
+        divvy.appendChild(soundIcon); // output to div
     }); // end forEach()
 } // end renderAnimals() function
 
@@ -59,6 +66,14 @@ function sortAnimals() {
     k == "yr" ? arr.sort((a,b) => a.yr-b.yr) : arr.sort((a,b) => a[k]>b[k] ? 1 : -1);
     if(descCB.checked) animals.reverse(); // if Descending is checked; reverse sort
     renderAnimals(); // re-render the sorted animals
+}
+
+var sound = new Audio(); // instantiate an audio object
+function playSound() {
+    sound.pause();
+    // concat mp3 file name from eng property of clicked sound icon
+    sound.src = `audio/${this.eng}.mp3`; 
+    sound.play();
 }
 
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:

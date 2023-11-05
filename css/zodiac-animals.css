@@ -86,7 +86,6 @@ section {
     border: 3px solid var(--colr);
     color: #441;
     text-align: center;
-    cursor: pointer;
     box-shadow: 0.5rem 0.5rem 0.5rem #33000080;
 
 }
@@ -97,7 +96,7 @@ section {
     margin: 20px 0px 0px 25px;
 }
 
-.sound-icon, span, .chinese-char, .zodiac-year, .pinyin {
+span, .chinese-char, .zodiac-year, .pinyin {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -109,7 +108,7 @@ section {
 
 .chinese-char {
     top: 145px;
-    right: 40px;
+    right: 45px;
     width: 43px;
     height: 43px;
 }
@@ -167,4 +166,13 @@ section {
     font-size: 1rem;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+}
+
+.sound-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
 }
