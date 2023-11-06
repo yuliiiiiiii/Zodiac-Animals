@@ -48,13 +48,13 @@ function renderAnimals() { // output the 12 animals to the section
         divvy.appendChild(yearsP); // append p tag to divvy
         // run a loop that starts w current year, and concats
         // years backwards in time, in increments of 12 years 
-        let yearsStr = animal.year + " ";
+        let yearsStr = animal.yr + " ";
        
         // L@@K CHALLENGE !! -- write the for loop that concats the yearsStr
         // there should be a total of 12 years: 2020 2008 1996 1984 1972 1960
-        // for(?; ?; ?) {
-        // }
-
+        for (let i=1; i<12; i++) {
+          yearsStr += animal.yr - 12*i + " ";
+        }
         yearsP.textContent = yearsStr; // put animal yr string in p-tag
     }); // end forEach()
 } // end renderAnimals() function
