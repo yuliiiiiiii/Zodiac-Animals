@@ -17,10 +17,10 @@ descCB.addEventListener('change', () => {
 
 function renderAnimals() { // output the 12 animals to the section
     section.innerHTML = ""; // clear section to make way for fresh output
-    arr.forEach((animal, i) => { // loop the array of animal objects
+    arr.forEach(animal => { // loop the array of animal objects
         const divvy = document.createElement('div'); // make a div
         divvy.className = 'divvy'; // assign class to div
-        divvy.id = i; // output English name text to span tag
+        // divvy.id = i; // output English name text to span tag
         section.appendChild(divvy); // output div to section
         const animalImg = new Image(); // make an image
         animalImg.src = `images/animals/${animal.eng}.jpg`; // concat path to jpg
@@ -35,7 +35,7 @@ function renderAnimals() { // output the 12 animals to the section
         const engSpan = document.createElement('span'); // make a span tag
         engSpan.className = 'english'; // assign class to span tag
         engSpan.textContent = animal.eng; // output Pinyin text to span (HTML entities require innerHTML)
-        engSpan.i = i; // output English name text to span tag
+        // engSpan.i = i; // output English name text to span tag
         divvy.appendChild(engSpan); // output span tag to divvy
         // make a span tag to hold Pinyin name of animal
         const pinSpan = document.createElement('span'); // make a span tag
@@ -53,14 +53,14 @@ function renderAnimals() { // output the 12 animals to the section
             yearsStr += (animal.yr - y) + "<br>"; // concat next year in the cycle
         }
         yearsP.innerHTML = yearsStr; // output animal yr string to p-tag
-        // make info div, which sits on top of reg divvy and appears on click
+        // make info div, which sits on top of divvy and appears-disappears on click
         const infoDiv = document.createElement('div');
         infoDiv.addEventListener('click', showHideInfo);
         infoDiv.addEventListener('dblclick', showHideInfo);
-        infoDiv.innerHTML = `<p class="animal-name">${animal.eng}</p><p>Partners:<br>${animal.partners}</p><p>Traits:<br>${animal.traits}</p>`;
+        infoDiv.innerHTML = `<p class="animal-name">${animal.eng}</p>
+        <p>Partners:<br>${animal.partners}</p>
+        <p>Characteristics:<br>${animal.traits}</p>`;
         infoDiv.className = 'divvy animal-info';
-        infoDiv.i = i;
-        infoDiv.id = 'info-' + i;
         divvy.appendChild(infoDiv);
         
     }); // end forEach()
