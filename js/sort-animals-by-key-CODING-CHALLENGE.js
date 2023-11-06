@@ -7,7 +7,10 @@ const menu = document.querySelector('select'); // get menu for choosing sort ord
 menu.addEventListener('change', sortAnimals); // call function on menu change
 const descCB = document.querySelector('input'); // get Descending checkbox
 // checkbox calls function on change; this function is short, so we can just 
-
+descCB.addEventListener('change', () => {
+    arr.reverse(); 
+    renderAnimals();
+})
 // L@@K CHALLENGE !!
 //  write function that runs when checkbox is checked or unchecked
 // - this code is very short, so rather than declare a function for this
