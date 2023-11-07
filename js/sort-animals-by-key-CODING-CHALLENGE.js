@@ -72,6 +72,10 @@ function sortAnimals() {
     // else sort key is "eng" or "chi", which are strings, so do a string-key sort
     // use dynamic obj key accessor syntex: [k], where k is either "eng" or "chi":
     // do this as an if-else OR BONUS: use a ternary to do it ALL in ONE line
+   
+    k === "yr" ? 
+    arr.sort((a,b) => a.yr - b.yr) : 
+    arr.sort((a,b) => a[k] - b[k] ? 1 : -1);
 
     if(descCB.checked) animals.reverse(); // if Descending is checked; reverse sort:
     renderAnimals(); // re-render the newly sorted animals
