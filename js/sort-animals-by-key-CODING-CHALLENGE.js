@@ -43,7 +43,7 @@ function renderAnimals() { // output the 12 animals to the section
         sound_icon.src = "images/sound-icon.png";
         sound_icon.className = 'sound-icon';
         divvy.appendChild(sound_icon);
-
+        sound_icon.addEventListener('click', ()=> playSound(animal.eng));
 
         const pinSpan = document.createElement('span');
         pinSpan.className = 'pinyin';
@@ -89,8 +89,8 @@ function sortAnimals() {
     renderAnimals(); // re-render the newly sorted animals
 }
 
-function playSound() {
-    // 
+function playSound(eng) {
+    new Audio(`audio/${eng}.mp3`).play();
 }
 
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
