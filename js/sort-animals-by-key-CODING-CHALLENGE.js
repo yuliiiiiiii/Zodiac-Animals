@@ -39,10 +39,12 @@ function renderAnimals() { // output the 12 animals to the section
         divvy.appendChild(engSpan); // output Eng name to divvy
         // make a span tag to hold Pinyin name of animal
 
+        // add sound icon to divvy
         const sound_icon = new Image();
         sound_icon.src = "images/sound-icon.png";
         sound_icon.className = 'sound-icon';
         divvy.appendChild(sound_icon);
+        // call playSound() on click
         sound_icon.addEventListener('click', ()=> playSound(animal.eng));
 
         const pinSpan = document.createElement('span');
