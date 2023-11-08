@@ -38,6 +38,13 @@ function renderAnimals() { // output the 12 animals to the section
         engSpan.textContent = animal.eng;
         divvy.appendChild(engSpan); // output Eng name to divvy
         // make a span tag to hold Pinyin name of animal
+
+        const sound_icon = new Image();
+        sound_icon.src = "images/sound-icon.png";
+        sound_icon.className = 'sound-icon';
+        divvy.appendChild(sound_icon);
+
+
         const pinSpan = document.createElement('span');
         pinSpan.className = 'pinyin';
         pinSpan.innerHTML = animal.pin; // can't use textContent, due to HTML entities
@@ -49,7 +56,7 @@ function renderAnimals() { // output the 12 animals to the section
         // run a loop that starts w current year, and concats
         // years backwards in time, in increments of 12 years 
         let yearsStr = animal.yr + " ";
-       
+        
         // L@@K CHALLENGE !! -- write the for loop that concats the yearsStr
         // there should be a total of 12 years: 2020 2008 1996 1984 1972 1960
         for (let i=1; i<12; i++) {
