@@ -1,5 +1,5 @@
 # Zodiac-Animals
-Code challenge from Brian
+Recreate code challenge from Brian using React
 
 #To start: 
 #cd client
