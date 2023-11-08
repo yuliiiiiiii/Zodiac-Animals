@@ -75,7 +75,7 @@ function sortAnimals() {
    
     k === "yr" ? 
     arr.sort((a,b) => a.yr - b.yr) : 
-    arr.sort((a,b) => a[k].localeCompare(b[k]));
+    arr.sort((a,b) => a[k] > b[k] ? 1 : -1 );
 
     if(descCB.checked) animals.reverse(); // if Descending is checked; reverse sort:
     renderAnimals(); // re-render the newly sorted animals
