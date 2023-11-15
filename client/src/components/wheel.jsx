@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/wheel.scss'
+import { useEffect } from 'react';
 
 const Wheel = (props) => {
 
-    // const spin = () => {
-    //   setInterval(() => wheel.style.transform += 'rotate(0.1deg)', 25);
-    // }
-    // spin()
+    useEffect(()=> {
+      setInterval(() => wheel.style.transform += 'rotate(0.1deg)', 25);
+    }, [])
+    //// useEffect is triggered everytime there's browser re-render(like a state change, so user don't have to call it)
 
   return (
     <div>
