@@ -94,7 +94,7 @@ function sortAnimals() {
 
 function playSound(eng) {
     new Audio(`audio/${eng}.mp3`).play();
-    // change it to promise
+    
 }
 
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
