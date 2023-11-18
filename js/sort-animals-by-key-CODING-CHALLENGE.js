@@ -19,7 +19,7 @@ descCB.addEventListener('change', () => {
 // - function ends by calling the renderAnimals() function
 
 //set the sound which is playing
-let currentSound = null;
+// let currentSound = null;
 
 function renderAnimals() { // output the 12 animals to the section
     section.innerHTML = ""; // clear section to make way for fresh output
@@ -95,14 +95,16 @@ function sortAnimals() {
     renderAnimals(); // re-render the newly sorted animals
 }
 
+let currentSound = new Audio
 function playSound(eng) {
     //If there's a sound palying, stop it
-    if (currentSound) {
-        currentSound.pause();
-    }
+    // if (currentSound) {
+    //     currentSound.pause();
+    // }
+    currentSound.pause();
 
-    //Create a new audio and play it
-    currentSound = new Audio(`audio/${eng}.mp3`)
+    //Change to a new audio and play it
+    currentSound.src = `audio/${eng}.mp3`;
     currentSound.play();
 }
 
