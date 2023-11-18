@@ -18,6 +18,9 @@ descCB.addEventListener('change', () => {
 // - function calls reverse() method on the array to reverse the order of objects
 // - function ends by calling the renderAnimals() function
 
+//set the sound which is playing
+let currentSound = null;
+
 function renderAnimals() { // output the 12 animals to the section
     section.innerHTML = ""; // clear section to make way for fresh output
     arr.forEach(animal => { // loop the array of animal objects
@@ -93,8 +96,14 @@ function sortAnimals() {
 }
 
 function playSound(eng) {
-    new Audio(`audio/${eng}.mp3`).play();
-    // test
+    //If there's a sound palying, stop it
+    if (currentSound) {
+        currentSound.pause();
+    }
+
+    //Create a new audio and play it
+    currentSound = new Audio(`audio/${eng}.mp3`)
+    currentSound.play();
 }
 
 const wheel = document.querySelector('.wheel'); // get the wheel and spin it:
