@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/wheel.scss'
-import { useEffect } from 'react';
 
 const Wheel = (props) => {
 
-    // useEffect(()=> {
-    //   setInterval(() => wheel.style.transform += 'rotate(0.1deg)', 25);
-    // }, [])
-    //// useEffect is triggered everytime there's browser re-render(like a state change, so user don't have to call it)
+  const [angle, setAngle] = useState(0);
+
+  useEffect(()=> {
+    setInterval(() => setAngle(prevAngle => prevAngle + 0.1), 25);
+  }, [])
+ //// useEffect is triggered only once. [] means the effect doesn't use any value that participate in React data flow, so it is only called once when the page is rendered
 
   return (
     <div>
-      <img className="wheel" src='images/wheel-slices/zodiac-animals-wheel.png'/>
+      <img 
+      className="wheel" 
+      src='images/wheel-slices/zodiac-animals-wheel.png' 
+      style={{transform: `rotate(${angle}deg)` }}
+      />
     </div>
   )
 };
