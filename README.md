@@ -2,6 +2,9 @@
 Recreate code challenge from Brian using React
 
 To start: 
- cd client
- npm install
- npm start
+
+  cd client
+
+  npm install
+  
+  npm start
