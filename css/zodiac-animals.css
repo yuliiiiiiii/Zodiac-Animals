@@ -1,7 +1,9 @@
+/* used */
 :root {
     --colr: #c91921;
 }
 
+/* used */
 body {
     margin: 0;
     font-family: sans-serif;
@@ -10,6 +12,7 @@ body {
     background-color: #000;
 }
 
+/* used */
 .container {
     text-align: center;
     width: 700px;
@@ -30,6 +33,7 @@ h1 + div {
     margin: 0 auto;
 }
 
+/* used */
 select, input, label {
     font-size: 1.1rem;
     font-weight: bold;
@@ -37,25 +41,30 @@ select, input, label {
     margin: 0 0.5rem;
 }
 
+/* used */
 select {
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
 }
 
+/* used */
 label {
     margin-right: 1.75rem;
     margin-left: 0.25rem;
 }
 
+/* used */
 input {
     margin-left: 2rem;
     margin-bottom: 0.75rem;
 }
 
+/* used */
 h1 {
     font-size: 1.5rem;
 }
 
+/* used */
 h2 {
     font-size: 1.25rem;
 }
