@@ -33,6 +33,7 @@ h1 + div {
     margin: 0 auto;
 }
 
+/* used */
 select, input, label {
     font-size: 1.1rem;
     font-weight: bold;
@@ -40,16 +41,19 @@ select, input, label {
     margin: 0 0.5rem;
 }
 
+/* used */
 select {
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
 }
 
+/* used */
 label {
     margin-right: 1.75rem;
     margin-left: 0.25rem;
 }
 
+/* used */
 input {
     margin-left: 2rem;
     margin-bottom: 0.75rem;

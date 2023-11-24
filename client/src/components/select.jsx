@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/select.scss'
 
 const Select = () => {
 
@@ -15,7 +16,7 @@ const Select = () => {
       <label for="cb">Descending</label>
       <p> - Click Animal to Show / Hide More Info</p>
 
-      
+
     </div>
   )
 }
