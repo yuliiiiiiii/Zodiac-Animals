@@ -1,7 +1,9 @@
+/* used */
 :root {
     --colr: #c91921;
 }
 
+/* used */
 body {
     margin: 0;
     font-family: sans-serif;
@@ -10,6 +12,7 @@ body {
     background-color: #000;
 }
 
+/* used */
 .container {
     text-align: center;
     width: 700px;
