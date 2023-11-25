@@ -7,8 +7,7 @@ const AnimalListItem = (props) => {
 
   return (
     <div>
-      {/* <img src={`/images/animals/${eng}.jpg`} /> */}
-      {/* the url is not correct form! */}
+      <img src={`/images/animals/${eng}.jpg`} />
       <span>
         {eng}
       </span>
