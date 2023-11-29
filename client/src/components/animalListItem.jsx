@@ -18,17 +18,18 @@ const AnimalListItem = (props) => {
   }
 
   return (
-    <div>
+    <div className="divvy">
       <img src={`/images/animals/${eng}.jpg`} className="animal-pic"/>
       <img src={`/images/chars/char-${chr}.jpg`} className="chinese-char"/>
       <span className="english">
         {eng}
       </span>
       {formatPinYin}
-      <p>
+      <p className="zodiac-year">
         <span>{yr}</span>
         {years()}
       </p>
+      <img src={"/images/sound-icon.png"} className="sound-icon"/>
     </div>
   )
 }
