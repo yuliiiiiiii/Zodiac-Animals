@@ -9,6 +9,14 @@ const AnimalListItem = (props) => {
   // by default, any content rendered inside {} is treated as a text node, which means it will escape any HTML entities or tags.
   // dangerouslySetInnerHTML can expose my app to cross-site scripting vulnerabilities. As long as the `pin` props is not user-generated or is properly sanitized, it shoule be fine.
 
+  let yearStr = ""
+  const years = () => {
+    for (let i=1; i<12; i++) {
+     yearStr += yr - 12*i
+    }
+    return yearStr
+  }
+
   return (
     <div>
       <img src={`/images/animals/${eng}.jpg`} className="animal-pic"/>
@@ -17,6 +25,10 @@ const AnimalListItem = (props) => {
         {eng}
       </span>
       {formatPinYin}
+      <p>
+        <span>{yr}</span>
+        {years()}
+      </p>
     </div>
   )
 }
