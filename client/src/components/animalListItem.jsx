@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/animalListItem.scss";
+import AnimalInfo from "./animalInfo";
 
 const AnimalListItem = (props) => {
   const { eng, chr, chi, pin, yr, partners, traits} = props.animal;
@@ -17,8 +18,15 @@ const AnimalListItem = (props) => {
     return yearStr
   }
 
+  // set state to only show AninalInfo when clicked
+  const [clicked, setclicked] = useState(false);
+  const handleClick = () => {
+    setclicked(!clicked);
+    // toggles the state of clicked to the opposite
+  }
+
   return (
-    <div className="divvy">
+    <div className="divvy" onClick={handleClick}>
       <img src={`/images/animals/${eng}.jpg`} className="animal-pic"/>
       <img src={`/images/chars/char-${chr}.jpg`} className="chinese-char"/>
       <span className="english">
@@ -30,6 +38,10 @@ const AnimalListItem = (props) => {
         {years()}
       </p>
       <img src={"/images/sound-icon.png"} className="sound-icon"/>
+
+      {/* only show <AnimalInfo> when clicked is true */}
+      {clicked && <AnimalInfo eng={eng} partners={partners} traits={traits}/>}
+
     </div>
   )
 }

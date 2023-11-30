@@ -1,0 +1,17 @@
+.animal-info {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  background-color: #fff;
+  left: -10px;
+  top: -10px;
+  font-size: 0.85rem;
+}
+
+.animal-name {
+  color: var(--colr);
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+}
