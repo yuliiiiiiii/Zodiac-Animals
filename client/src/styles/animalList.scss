@@ -1,0 +1,18 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--colr);
+  text-align: center;
+  color: white;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  max-height: 80vh;
+  margin: 1rem auto;
+  text-align: center;
+  /* border-radius: 15px; */
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  overflow-y: auto;
+  box-shadow: 0rem 1rem 1rem #33000080;
+}

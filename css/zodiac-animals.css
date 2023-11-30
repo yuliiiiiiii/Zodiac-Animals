@@ -69,6 +69,7 @@ h2 {
     font-size: 1.25rem;
 }
 
+/* used */
 section {
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +89,7 @@ section {
     box-shadow: 0rem 1rem 1rem #33000080;
 }
 
+/* used */
 .divvy {
     position: relative;
     display: inline-block;
@@ -103,13 +105,14 @@ section {
     box-shadow: 5px 5px 5px #33000070; /* last 2 digits are % opacity */
 
 }
-
+ /* used */
 .animal-pic {
     width: 73%;
     height: auto;
     margin: 20px 0px 0px 25px;
 }
 
+/* used */
 /* span,  */
 .chinese-char, .zodiac-year, .pinyin {
     position: absolute;
@@ -121,6 +124,7 @@ section {
 
 }
 
+/* used */
 .chinese-char {
     top: 145px;
     right: 45px;
@@ -128,6 +132,7 @@ section {
     height: 43px;
 }
 
+/* used */
 .zodiac-year {
     top: 2px;
     left: 5px;
@@ -142,6 +147,7 @@ section {
     color: var(--colr);
 }
 
+/* used */
 .english {
     font-size: 1.25rem;
     position: absolute;
@@ -150,6 +156,7 @@ section {
     color: var(--colr);
 }
 
+/* used */
 .pinyin {
     top: 120px;
     right: 40%;
@@ -171,6 +178,7 @@ section {
     /* box-shadow: 1rem 1rem 1rem #33000060; */
 }
 
+/* used */
 .divvy p span {
     display: flex;
     justify-content: flex-end;
@@ -185,6 +193,7 @@ section {
     border-radius: 4px;
 }
 
+/* used */
 .sound-icon {
     cursor: pointer;
     position: absolute;
