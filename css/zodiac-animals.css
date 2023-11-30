@@ -203,6 +203,7 @@ section {
     height: 22px;
 }
 
+/* used */
 .animal-info {
     position: absolute;
     z-index: 1;
@@ -214,6 +215,7 @@ section {
     opacity: 0
 }
 
+/* used */
 .animal-name {
     color: var(--colr);
     text-transform: uppercase;
