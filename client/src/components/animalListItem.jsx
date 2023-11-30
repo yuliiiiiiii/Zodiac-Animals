@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/animalListItem.scss";
+import AnimalInfo from "./animalInfo";
 
 const AnimalListItem = (props) => {
   const { eng, chr, chi, pin, yr, partners, traits} = props.animal;
@@ -30,6 +31,7 @@ const AnimalListItem = (props) => {
         {years()}
       </p>
       <img src={"/images/sound-icon.png"} className="sound-icon"/>
+      <AnimalInfo eng={eng} partners={partners} traits={traits}/>
     </div>
   )
 }
