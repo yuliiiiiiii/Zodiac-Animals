@@ -12,7 +12,7 @@ const AnimalListItem = (props) => {
   let yearStr = ""
   const years = () => {
     for (let i=1; i<12; i++) {
-     yearStr += yr - 12*i
+     yearStr += yr - 12*i + " "
     }
     return yearStr
   }
@@ -26,7 +26,7 @@ const AnimalListItem = (props) => {
       </span>
       {formatPinYin}
       <p className="zodiac-year">
-        <span>{yr}</span>
+        <span>{yr} </span>
         {years()}
       </p>
       <img src={"/images/sound-icon.png"} className="sound-icon"/>
