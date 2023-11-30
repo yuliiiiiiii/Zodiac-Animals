@@ -18,12 +18,12 @@ const AnimalListItem = (props) => {
     return yearStr
   }
 
+  // set state to only show AninalInfo when clicked
   const [clicked, setclicked] = useState(false);
   const handleClick = () => {
     setclicked(!clicked);
     // toggles the state of clicked to the opposite
   }
-
 
   return (
     <div className="divvy" onClick={handleClick}>
@@ -41,7 +41,7 @@ const AnimalListItem = (props) => {
 
       {/* only show <AnimalInfo> when clicked is true */}
       {clicked && <AnimalInfo eng={eng} partners={partners} traits={traits}/>}
-      
+
     </div>
   )
 }
