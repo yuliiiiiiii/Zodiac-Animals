@@ -28,7 +28,7 @@ const AnimalListItem = (props) => {
   }
 
   const handleSound = () => {
-    // only call the playsound() function when clicked
+    // only call the playsound() function here, when clicked
     playSound(eng)
   }
 
