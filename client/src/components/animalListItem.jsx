@@ -5,6 +5,8 @@ import AnimalInfo from "./animalInfo";
 const AnimalListItem = (props) => {
   const { eng, chr, chi, pin, yr, partners, traits} = props.animal;
   const {index} = props.index
+
+  const playSound = props.playSound;
   
   const formatPinYin = <span className="pinyin" dangerouslySetInnerHTML={{ __html: pin }}></span>
   // by default, any content rendered inside {} is treated as a text node, which means it will escape any HTML entities or tags.
@@ -25,11 +27,9 @@ const AnimalListItem = (props) => {
     // toggles the state of clicked to the opposite
   }
 
-  const sound = new Audio()
-  const playSound = () => {
-    sound.pause();
-    sound.src = `/audio/${eng}.mp3`;
-    sound.play();
+  const handleSound = () => {
+    // only call the playsound() function when clicked
+    playSound(eng)
   }
 
   return (
@@ -52,7 +52,7 @@ const AnimalListItem = (props) => {
       </div>
       
       {/* sound icon should be inside of divvy because postion relative/absolute */}
-      <img src={"/images/sound-icon.png"} className="sound-icon" onClick={playSound}/>
+      <img src={"/images/sound-icon.png"} className="sound-icon" onClick={handleSound}/>
 
     </div>
   )
