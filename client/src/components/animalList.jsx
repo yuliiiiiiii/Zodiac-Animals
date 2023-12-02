@@ -5,12 +5,21 @@ import { animals } from "../animals_data";
 
 const AnimalList = () => {
 
+  // define the playSound function at a higher level, and pass it down as a prop, so that all the child components(AnimalListItem) know which sound is playing, both within one card or between different cards
+  const sound = new Audio()
+  const playSound = (english) => {
+    sound.pause();
+    sound.src = `/audio/${english}.mp3`;
+    sound.play();
+  }
+
   const animalArray = animals.map((animal, index) => {
     return (
       <AnimalListItem 
         key={index}
         animal={animal}
         index={index}
+        playSound={playSound}
       />
     )
   })
