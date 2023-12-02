@@ -25,22 +25,34 @@ const AnimalListItem = (props) => {
     // toggles the state of clicked to the opposite
   }
 
-  return (
-    <div className="divvy" onClick={handleClick}>
-      <img src={`/images/animals/${eng}.jpg`} className="animal-pic"/>
-      <img src={`/images/chars/char-${chr}.jpg`} className="chinese-char"/>
-      <span className="english">
-        {eng}
-      </span>
-      {formatPinYin}
-      <p className="zodiac-year">
-        <span>{yr} </span>
-        {years()}
-      </p>
-      <img src={"/images/sound-icon.png"} className="sound-icon"/>
+  const sound = new Audio()
+  const playSound = () => {
+    sound.pause();
+    sound.src = `/audio/${eng}.mp3`;
+    sound.play();
+  }
 
-      {/* only show <AnimalInfo> when clicked is true */}
-      {clicked && <AnimalInfo eng={eng} partners={partners} traits={traits}/>}
+  return (
+    <div className="divvy" >
+
+      <div onClick={handleClick}>
+        <img src={`/images/animals/${eng}.jpg`} className="animal-pic"/>
+        <img src={`/images/chars/char-${chr}.jpg`} className="chinese-char"/>
+        <span className="english">
+          {eng}
+        </span>
+        {formatPinYin}
+        <p className="zodiac-year">
+          <span>{yr} </span>
+          {years()}
+        </p>
+
+        {/* only show <AnimalInfo> when clicked is true */}
+        {clicked && <AnimalInfo eng={eng} partners={partners} traits={traits}/>}
+      </div>
+      
+      {/* sound icon should be inside of divvy because postion relative/absolute */}
+      <img src={"/images/sound-icon.png"} className="sound-icon" onClick={playSound}/>
 
     </div>
   )
