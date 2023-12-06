@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext }  from "react";
 import '../styles/select.scss'
+import { selectContext } from "../providers/SelectProvider";
 
 const Select = () => {
+
+  
 
   return (
     <div>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/animalList.scss";
 import AnimalListItem from "./animalListItem";
 import { animals } from "../animals_data";
+import { selectContext } from "../providers/SelectProvider";
 
 const AnimalList = () => {
 
