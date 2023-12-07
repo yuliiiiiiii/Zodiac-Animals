@@ -3,20 +3,19 @@ import '../styles/select.scss'
 import { selectContext } from "../providers/SelectProvider";
 
 const Select = () => {
-
-  
+  const { handleSort } = useContext(selectContext)
 
   return (
     <div>
-      <select>
-        <option value="choose">Sort by...</option>
+      <select onChange={(event) => handleSort(event.target.value)}>
+        <option value="choose" >Sort by...</option>
         <option value="eng" selected>English Name</option>
         <option value="chi">Chinese Name</option>
         <option value="yr">Year</option>
       </select>
 
       <input type="checkbox" className="cb" value="desc" />
-      <label for="cb">Descending</label>
+      <label>Descending</label>
       <p> - Click Animal to Show / Hide More Info</p>
 
 
