@@ -10,7 +10,7 @@ export default function SelectProvider(props) {
   const handleSort = (value) => {
     // console.log("event.target.value:", value)
 
-    // define a copied array to show the change between sorted and original array(newAnimals and sortedAnimals)
+    // get a copied array to show the change between sorted and original array(newAnimals and sortedAnimals)
     let newAnimals = [...sortedAnimals]
     if ( value == "yr" ) {
       newAnimals.sort((a,b) => a.yr - b.yr);
