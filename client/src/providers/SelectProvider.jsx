@@ -7,10 +7,12 @@ export default function SelectProvider(props) {
   
   const [sortedAnimals, setSortedAnimals] = useState(animals)
   
+  const [sortValue, setSortValue] = useState("")
   const handleSort = (value) => {
     // console.log("event.target.value:", value)
 
     // get a copied array to show the change between sorted and original array(newAnimals and sortedAnimals)
+    setSortValue(value);
     let newAnimals = [...sortedAnimals]
     if ( value == "yr" ) {
       newAnimals.sort((a,b) => a.yr - b.yr);
@@ -20,9 +22,21 @@ export default function SelectProvider(props) {
     setSortedAnimals(newAnimals)
   }
 
+  const handleDescend = (checked) => {
+    if (checked) {
+      console.log("event.target.checked:", checked)
+      const reveredAnimals = [...sortedAnimals].reverse()
+      setSortedAnimals(reveredAnimals)
+    } else {
+      console.log("event.target.checked:", checked)
+      handleSort(sortValue)
+    }
+  }
+
   const selectData = {
    sortedAnimals,
-   handleSort
+   handleSort,
+   handleDescend
   };
 
   return (

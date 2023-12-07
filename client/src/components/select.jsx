@@ -3,7 +3,7 @@ import '../styles/select.scss'
 import { selectContext } from "../providers/SelectProvider";
 
 const Select = () => {
-  const { handleSort } = useContext(selectContext)
+  const { handleSort, handleDescend } = useContext(selectContext)
 
   return (
     <div>
@@ -14,7 +14,7 @@ const Select = () => {
         <option value="yr">Year</option>
       </select>
 
-      <input type="checkbox" className="cb" value="desc" />
+      <input type="checkbox" className="cb" onChange={(event) => handleDescend(event.target.checked) }/>
       <label>Descending</label>
       <p> - Click Animal to Show / Hide More Info</p>
 

@@ -15,7 +15,6 @@ const AnimalList = () => {
     sound.play();
   }
 
-
   const animalArray = sortedAnimals.map((animal, index) => {
     return (
       <AnimalListItem 
