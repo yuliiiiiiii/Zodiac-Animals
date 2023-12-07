@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import "../styles/animalList.scss";
 import AnimalListItem from "./animalListItem";
-import { animals } from "../animals_data";
+// import { animals } from "../animals_data";
 import { selectContext } from "../providers/SelectProvider";
 
 const AnimalList = () => {
+  const { sortedAnimals } = useContext(selectContext)
 
   // define the playSound function at a higher level, and pass it down as a prop, so that all the child components(AnimalListItem) know which sound is playing, both within one card or between different cards
   const sound = new Audio()
@@ -14,7 +15,8 @@ const AnimalList = () => {
     sound.play();
   }
 
-  const animalArray = animals.map((animal, index) => {
+
+  const animalArray = sortedAnimals.map((animal, index) => {
     return (
       <AnimalListItem 
         key={index}
