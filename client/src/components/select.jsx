@@ -1,9 +1,9 @@
-import React, { useContext }  from "react";
-import '../styles/select.scss'
+import React, { useContext } from "react";
+import '../styles/select.scss';
 import { selectContext } from "../providers/SelectProvider";
 
 const Select = () => {
-  const { handleSort, handleCheck } = useContext(selectContext)
+  const { handleSort, handleCheck } = useContext(selectContext);
 
   return (
     <div>
@@ -14,13 +14,11 @@ const Select = () => {
         <option value="yr">Year</option>
       </select>
 
-      <input type="checkbox" className="cb" onChange={(event) => handleCheck(event) }/>
+      <input type="checkbox" className="cb" onChange={(event) => handleCheck(event)} />
       <label>Descending</label>
       <p> - Click Animal to Show / Hide More Info</p>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Select
+export default Select;
