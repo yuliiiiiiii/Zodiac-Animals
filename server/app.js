@@ -1,9 +1,9 @@
 //declarations
+require('dotenv').config()
+const {ENVIROMENT, PORT} = process.env
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const PORT = 8080;
-const enviroment = 'dev';
 
 const app = express();
 
