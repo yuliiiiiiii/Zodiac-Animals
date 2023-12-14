@@ -1,8 +1,11 @@
 const router = require('express').Router();
+const animals = require('../db/queries/animals');
 
 router.get('/', (req, res) => {
-  const animalsGreet = 'This is all the animals';
-  res.json(animalsGreet);
+  animals.getAllAnimals().then(data => {
+    console.log(data);
+    res.json({animals: data})
+  })
 });
 
 module.exports = router;
