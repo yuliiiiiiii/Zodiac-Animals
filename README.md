@@ -15,5 +15,7 @@ To start back-end:
 
   npm install
 
+  npm run db:reset
+
   npm run dev
 
