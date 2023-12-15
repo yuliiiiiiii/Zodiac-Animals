@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const animals = require('../db/queries/animals');
+const animalsQueries = require('../db/queries/animals');
 
-router.get('/', (req, res) => {
-  animals.getAllAnimals().then(data => {
-    console.log(data);
-    res.json({animals: data})
-  })
-});
+router.get('/', async (req, res) => {
+  try{
+    const animals = await animalsQueries.getAllAnimals();
+    res.status(200).json(animals);
+  } catch(e) {
+    console.error("Error during fetching animals:", e);
+    res.status(500).send("Server Error");
+  }
+  });
 
 module.exports = router;

@@ -1,9 +1,14 @@
 const db = require('../../configs/db.config');
 
-const getAllAnimals = () => {
-  return db.query("SELECT * FROM animals").then(data => {
-    return data.rows;
-  })
-}
+const getAllAnimals = async () => {
+  try {
+    const result = await db.query("SELECT * FROM animals");
+    console.log("animals:", result.rows)
+    return result.rows
+  } catch (e) {
+    console.error("Error during getting all animals data:", e);
+    throw e;
+  }
+};
 
-module.exports = {getAllAnimals}
+module.exports = { getAllAnimals }
