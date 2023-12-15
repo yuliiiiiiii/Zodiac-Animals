@@ -1,6 +1,8 @@
 //declarations
 require('dotenv').config()
+const cors = require("cors");
 const {ENVIRONMENT, PORT} = process.env
+
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -16,6 +18,18 @@ app.use(bodyParser.json());
 
 //link animalsRoutes, localhost:8080/animals
 app.use('/animals', animalsRoutes);
+
+console.log("CORS ORIGIN:", process.env.ORIGIN);
+
+const corsOptions = {
+  origin: process.env.ORIGIN,
+  optionsSuccessStatus: 200,
+  credentials: true,
+  ContentType: "json",
+};
+
+//use middleware cors to fix cors issue
+app.use(cors(corsOptions));
 
 //localhost:8080
 app.get('/', (req, res) => {
