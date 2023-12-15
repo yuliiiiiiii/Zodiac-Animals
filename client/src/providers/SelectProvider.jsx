@@ -1,11 +1,22 @@
 import { createContext, useContext, useState } from "react";
-import { animals } from "../animals_data";
-
+// import { animals } from "../animals_data";
+import axios from "axios";
 export const selectContext = createContext();
 
 export default function SelectProvider(props) {
 
-  const [sortedAnimals, setSortedAnimals] = useState(animals);
+  const [sortedAnimals, setSortedAnimals] = useState([]);
+
+  const fetchAnimals = async() => {
+    try{
+      const res = await axios.get("http://localhost:8080/animals");
+      // console.log("animals data from server:", res)
+      const animals = res.data;
+      setSortedAnimals(animals);
+    } catch(e) {
+      console.error("Could not fetch animals from server", e);
+    }
+  };
 
   const [check, setCheck] = useState(false);
 
@@ -42,6 +53,7 @@ export default function SelectProvider(props) {
 
   const selectData = {
     sortedAnimals,
+    fetchAnimals,
     handleCheck,
     handleSort
   };
