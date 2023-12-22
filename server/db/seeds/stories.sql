@@ -11,4 +11,4 @@ INSERT INTO stories (animal_id, story)
 (9, 'No story yet'),
 (10, 'No story yet'),
 (11, 'No story yet'),
-(12, 'No story yet')
+(12, 'No story yet');
