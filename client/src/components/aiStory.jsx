@@ -18,7 +18,7 @@ const AiStory = () => {
   }
 
   const storiesArray = stories.map((story, index) => {
-    return <p key={index}> {story.eng} : {story.story} </p>
+    return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
   })
 
   return (
