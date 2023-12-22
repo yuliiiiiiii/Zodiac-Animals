@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/aiStory.scss";
 import { selectContext } from "../providers/SelectProvider";
 
-const AiStory = (props) => {
+const AiStory = () => {
   
-  const { sortedAnimals } = useContext(selectContext)
+  const { sortedAnimals, story, fetchStories } = useContext(selectContext)
   
+  const [animalId, setAnimalId] = useState(0);
+
   const optionArray = sortedAnimals.sort((a,b) => a.yr - b.yr).map(animal => {
-    return <option value={animal.id} >{animal.eng}</option>
+    return <option key={animal.id} value={animal.id} >{animal.eng}</option>
   })
 
   return (
@@ -16,7 +18,7 @@ const AiStory = (props) => {
         {optionArray}
       </select>
       <button>Create an animal story</button>
-      <p></p>
+      <p>{story}</p>
     </div>
   )
 }

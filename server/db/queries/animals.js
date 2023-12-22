@@ -11,4 +11,16 @@ const getAllAnimals = async () => {
   }
 };
 
-module.exports = { getAllAnimals }
+const getStories = async (animalId) => {
+  try{
+    const result = await db.query(`SELECT * FROM stories WHERE animal_id = ${animalId}`);
+    console.log("stories:", result.rows)
+    return result.rows
+
+  } catch (e) {
+    console.error("Error during getting stories:", e);
+    throw e;
+  }
+}
+
+module.exports = { getAllAnimals, getStories }

@@ -12,7 +12,15 @@ router.get('/', async (req, res) => {
   });
 
 router.get('/ai', async (req, res) => {
-  // need to get all stories where animal_id = req.body
+  const animal_id = req.params.id;
+  try{
+    console.log("req.params.id:", animal_id)
+    const stories = await animalsQueries.getStories(animal_id);
+    res.status(200).json(stories);
+  } catch(e) {
+    console.error("Error during fetching stories:", e);
+    res.status(500).send("Server Error");
+  }
 })
 
 module.exports = router;
