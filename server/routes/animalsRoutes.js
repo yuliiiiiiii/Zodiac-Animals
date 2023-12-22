@@ -11,13 +11,14 @@ router.get('/', async (req, res) => {
   }
   });
 
-router.get('/ai', async (req, res) => {
-  const animal_id = req.params.id;
+router.get('/ai/:id', async (req, res) => {
+  const animal_id = Number(req.params.id);
   try{
-    console.log("req.params.id:", animal_id)
-    const stories = await animalsQueries.getStories(animal_id);
-    res.status(200).json(stories);
+    console.log("Type of animal_id:", typeof animal_id)
+    const storiesWithNam = await animalsQueries.getStoriesAndNam(animal_id);
+    res.status(200).json(storiesWithNam);
   } catch(e) {
+    console.log("Type of animal_id:", typeof animal_id)
     console.error("Error during fetching stories:", e);
     res.status(500).send("Server Error");
   }

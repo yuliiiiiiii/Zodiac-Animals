@@ -51,18 +51,18 @@ export default function SelectProvider(props) {
     }
   };
 
-  const [story, setStory] = useState("");
+  const [stories, setStories] = useState([]);
 
   const fetchStories = async(animal_id) => {
     try {
-      const res = await axios.get("http://localhost:8080/animals/ai", {
-        params: {
-          id: animal_id
-        }
-      })
+      const res = await axios.get(`http://localhost:8080/animals/ai/${animal_id}`)
 
-      const animalStory = res.data
-      setStory(animalStory);
+      const animalStoriesWithNam = res.data
+      // setStory(animalStories);
+      console.log("unparse animal stories with name:", animalStoriesWithNam)
+      
+      setStories(animalStoriesWithNam)
+      
 
     } catch(e) {
       console.error("Could not fetch stories from server", e);
@@ -74,7 +74,7 @@ export default function SelectProvider(props) {
     fetchAnimals,
     handleCheck,
     handleSort,
-    story,
+    stories,
     fetchStories
   };
 

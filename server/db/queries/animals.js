@@ -11,9 +11,9 @@ const getAllAnimals = async () => {
   }
 };
 
-const getStories = async (animalId) => {
+const getStoriesAndNam = async (animalId) => {
   try{
-    const result = await db.query(`SELECT * FROM stories WHERE animal_id = ${animalId}`);
+    const result = await db.query(`SELECT eng, story FROM animals JOIN stories ON animals.id = stories.animal_id WHERE stories.animal_id = ${animalId}`);
     console.log("stories:", result.rows)
     return result.rows
 
@@ -23,4 +23,4 @@ const getStories = async (animalId) => {
   }
 }
 
-module.exports = { getAllAnimals, getStories }
+module.exports = { getAllAnimals, getStoriesAndNam }
