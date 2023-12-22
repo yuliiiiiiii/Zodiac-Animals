@@ -4,7 +4,7 @@ import AnimalInfo from "./animalInfo";
 
 const AnimalListItem = (props) => {
   const { eng, chr, chi, pin, yr, partners, traits} = props.animal;
-  const {index} = props.index
+  const {id} = props.id
 
   const playSound = props.playSound;
   

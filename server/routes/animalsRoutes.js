@@ -11,4 +11,8 @@ router.get('/', async (req, res) => {
   }
   });
 
+router.get('/ai', async (req, res) => {
+  // need to get all stories where animal_id = req.body
+})
+
 module.exports = router;

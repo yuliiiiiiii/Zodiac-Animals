@@ -19,12 +19,12 @@ const AnimalList = () => {
     sound.play();
   }
 
-  const animalArray = sortedAnimals.map((animal, index) => {
+  const animalArray = sortedAnimals.map((animal) => {
     return (
       <AnimalListItem 
-        key={index}
+        key={animal.id}
         animal={animal}
-        index={index}
+        id={animal.id}
         playSound={playSound}
       />
     )

@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS stories CASCADE;
+
+CREATE TABLE stories (
+  id SERIAL PRIMARY KEY,
+  animal_id INT NOT NULL REFERENCES animals(id),
+  story TEXT NOT NULL
+);
