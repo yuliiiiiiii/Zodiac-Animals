@@ -7,7 +7,7 @@ const AiStory = (props) => {
   const { sortedAnimals } = useContext(selectContext)
   
   const optionArray = sortedAnimals.sort((a,b) => a.yr - b.yr).map(animal => {
-    return <option value={animal.eng} >{animal.eng}</option>
+    return <option value={animal.id} >{animal.eng}</option>
   })
 
   return (
