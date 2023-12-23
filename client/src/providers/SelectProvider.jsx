@@ -23,8 +23,6 @@ export default function SelectProvider(props) {
   const handleCheck = (eventCheck) => {
     if (eventCheck.target.checked) {
       setCheck(true);
-      
-      // There is something wrong here, when there is a re-render, it got triggered
       setSortedAnimals(sortedAnimals.reverse());
     } else {
       setCheck(false);
