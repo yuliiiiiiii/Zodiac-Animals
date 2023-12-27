@@ -13,9 +13,12 @@ const AiStory = () => {
     return <option key={animal.id} value={animal.id} >{animal.eng}</option>
   })
 
+  const [clicked, setClicked] = useState(false);
+
   const handleClick = () => {
     // console.log("animalId:", animalId)
    fetchStories(animalId);
+   setClicked(!clicked)
   }
 
   const storiesArray = stories.map((story, index) => {
@@ -29,6 +32,7 @@ const AiStory = () => {
       </select>
       <button onClick={handleClick}>Show its stories</button>
       {storiesArray}
+      {clicked && <button>Create a story</button>}
     </div>
   )
 }
