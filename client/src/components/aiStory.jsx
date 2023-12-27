@@ -27,7 +27,7 @@ const AiStory = () => {
       <select onChange={e => setAnimalId(e.target.value)}>
         {optionArray}
       </select>
-      <button onClick={handleClick} className="show_stories">Show its stories</button>
+      <button onClick={handleClick}>Show its stories</button>
       {storiesArray}
     </div>
   )
