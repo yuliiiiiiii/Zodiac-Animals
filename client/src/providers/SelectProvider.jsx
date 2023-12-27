@@ -10,7 +10,7 @@ export default function SelectProvider(props) {
   const fetchAnimals = async() => {
     try{
       const res = await axios.get("http://localhost:8080/animals");
-      // console.log("animals data from server:", res)
+      console.log("animals data from server:", res)
       const animals = res.data;
       setSortedAnimals(animals);
     } catch(e) {

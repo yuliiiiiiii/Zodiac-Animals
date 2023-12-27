@@ -8,7 +8,8 @@ const AiStory = () => {
   
   const [animalId, setAnimalId] = useState(1);
 
-  const optionArray = sortedAnimals.sort((a,b) => a.yr - b.yr).map(animal => {
+  const animalOptArray = [...sortedAnimals].sort((a,b) => a.yr - b.yr)
+  const optionArray = animalOptArray.map(animal => {
     return <option key={animal.id} value={animal.id} >{animal.eng}</option>
   })
 
