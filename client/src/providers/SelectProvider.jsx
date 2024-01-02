@@ -53,31 +53,31 @@ export default function SelectProvider(props) {
     }
   };
 
-  const [stories, setStories] = useState([]);
+  // const [stories, setStories] = useState([]);
 
-  const fetchStories = async(animal_id) => {
-    try {
-      const res = await axios.get(`http://localhost:8080/animals/ai/${animal_id}`)
+  // const fetchStories = async(animal_id) => {
+  //   try {
+  //     const res = await axios.get(`http://localhost:8080/animals/ai/${animal_id}`)
 
-      const animalStoriesWithNam = res.data
-      // setStory(animalStories);
-      console.log("unparse animal stories with name:", animalStoriesWithNam)
+  //     const animalStoriesWithNam = res.data
+  //     // setStory(animalStories);
+  //     console.log("unparse animal stories with name:", animalStoriesWithNam)
       
-      setStories(animalStoriesWithNam)
+  //     setStories(animalStoriesWithNam)
       
 
-    } catch(e) {
-      console.error("Could not fetch stories from server", e);
-    }
-  }
+  //   } catch(e) {
+  //     console.error("Could not fetch stories from server", e);
+  //   }
+  // }
 
   const selectData = {
     sortedAnimals,
     fetchAnimals,
     handleCheck,
     handleSort,
-    stories,
-    fetchStories
+    // stories,
+    // fetchStories
   };
 
   return (
