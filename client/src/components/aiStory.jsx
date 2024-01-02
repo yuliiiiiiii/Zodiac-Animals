@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import "../styles/aiStory.scss";
 import { selectContext } from "../providers/SelectProvider";
+import { storyContext } from "../providers/StoryProvider";
 
 const AiStory = () => {
   
-  const { sortedAnimals, stories, fetchStories } = useContext(selectContext)
+  const { sortedAnimals } = useContext(selectContext);
+  const { stories, fetchStories } = useContext(storyContext);
   
   const [animalId, setAnimalId] = useState(1);
 
