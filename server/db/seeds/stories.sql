@@ -1,10 +1,10 @@
 INSERT INTO stories (animal_id, story) 
   VALUES 
-(1, 'No story yet'),
-(2, 'No story yet'),
-(3, 'No story yet'),
-(4, 'No story yet'),
-(5, 'No story yet'),
+(1, ''),
+(2, ''),
+(3, ''),
+(4, ''),
+(5, ''),
 (6, 'No story yet'),
 (7, 'No story yet'),
 (8, 'No story yet'),
