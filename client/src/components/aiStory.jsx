@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../styles/aiStory.scss";
 import { selectContext } from "../providers/SelectProvider";
 import { storyContext } from "../providers/StoryProvider";
@@ -8,7 +8,7 @@ const AiStory = () => {
   const { sortedAnimals } = useContext(selectContext);
   const { stories, fetchStories } = useContext(storyContext);
   
-  const [animalId, setAnimalId] = useState(1);
+  const [animalId, setAnimalId] = useState();
 
   const animalOptArray = [...sortedAnimals].sort((a,b) => a.yr - b.yr)
   const optionArray = animalOptArray.map(animal => {
@@ -19,10 +19,14 @@ const AiStory = () => {
 
   const handleClick = () => {
     // console.log("animalId:", animalId)
-   fetchStories(animalId);
+    // fetchStories(animalId);
    setClicked(!clicked)
   }
   
+  useEffect(() => {
+    fetchStories(animalId);
+  }, [animalId])
+
   const storiesArray = stories.map((story, index) => {
 
     if (!story.story) {
@@ -34,7 +38,8 @@ const AiStory = () => {
 
   return (
     <div>
-      <select onChange={e => setAnimalId(e.target.value)}>
+      <select onChange={e => e.target.value !== "non" &&setAnimalId(e.target.value)}>
+        <option value="non">Choose an animal</option>
         {optionArray}
       </select>
       <button onClick={handleClick}>{clicked ? "Hide Stories" : "Show Stories"}</button>
