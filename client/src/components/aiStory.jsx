@@ -25,7 +25,7 @@ const AiStory = () => {
   
   useEffect(() => {
     fetchStories(animalId);
-  }, [animalId])
+  }, [animalId, stories])
 
   const storiesArray = stories.map((story, index) => {
 
