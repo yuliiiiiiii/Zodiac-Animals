@@ -5,10 +5,10 @@ INSERT INTO stories (animal_id, story)
 (3, ''),
 (4, ''),
 (5, ''),
-(6, 'No story yet'),
-(7, 'No story yet'),
-(8, 'No story yet'),
-(9, 'No story yet'),
-(10, 'No story yet'),
-(11, 'No story yet'),
-(12, 'No story yet');
+(6, ''),
+(7, ''),
+(8, ''),
+(9, ''),
+(10, ''),
+(11, ''),
+(12, '');
