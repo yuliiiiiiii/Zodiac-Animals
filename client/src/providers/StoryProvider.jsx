@@ -33,6 +33,7 @@ export default function StoryProvider(props) {
         console.log(error)
       })
   }
+  // need to build the server route!!! /animals/create
 
   const storyData = {
     stories,
