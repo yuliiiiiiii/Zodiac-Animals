@@ -19,13 +19,12 @@ const AiStory = () => {
 
   const handleClick = () => {
     // console.log("animalId:", animalId)
-    // fetchStories(animalId);
    setClicked(!clicked)
   }
   
   useEffect(() => {
     fetchStories(animalId);
-  }, [animalId, stories])
+  }, [animalId])
   // can be an issue here. After update stories table see if it will trigger fectchStories()!!!!
 
   const storiesArray = stories.map((story, index) => {
