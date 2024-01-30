@@ -26,6 +26,7 @@ const AiStory = () => {
   useEffect(() => {
     fetchStories(animalId);
   }, [animalId, stories])
+  // can be an issue here. After update stories table see if it will trigger fectchStories()!!!!
 
   const storiesArray = stories.map((story, index) => {
 
