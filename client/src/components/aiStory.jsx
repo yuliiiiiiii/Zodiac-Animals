@@ -6,7 +6,7 @@ import { storyContext } from "../providers/StoryProvider";
 const AiStory = () => {
   
   const { sortedAnimals } = useContext(selectContext);
-  const { stories, fetchStories } = useContext(storyContext);
+  const { stories, fetchStories, createStories } = useContext(storyContext);
   
   const [animalId, setAnimalId] = useState();
 
@@ -36,6 +36,8 @@ const AiStory = () => {
     }
   })
 
+  
+
   return (
     <div>
       <select onChange={e => e.target.value !== "non" &&setAnimalId(e.target.value)}>
@@ -44,7 +46,7 @@ const AiStory = () => {
       </select>
       <button onClick={handleClick}>{clicked ? "Hide Stories" : "Show Stories"}</button>
       {clicked && storiesArray}
-      {clicked && <button>Create a story</button>}
+      {clicked && <button onClick={() => createStories(animalId)}>Create a story</button>}
     </div>
   )
 }
