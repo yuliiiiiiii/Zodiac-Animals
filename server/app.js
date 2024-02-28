@@ -37,5 +37,6 @@ app.get('/', (req, res) => {
 //link animalsRoutes, localhost:8080/animals
 app.use('/animals', animalsRoutes);
 
+
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
 

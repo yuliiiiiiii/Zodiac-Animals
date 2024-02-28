@@ -22,9 +22,22 @@ export default function StoryProvider(props) {
     }
   }
 
+  const createStories = (animal_id) => {
+    axios.post('http://localhost:8080/animals/create', {
+        id: animal_id
+      })
+      .then((res) => {
+        console.log("created story:",res.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   const storyData = {
     stories,
-    fetchStories
+    fetchStories,
+    createStories
   }
 
   return (

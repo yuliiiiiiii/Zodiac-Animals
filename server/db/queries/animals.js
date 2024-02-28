@@ -23,4 +23,15 @@ const getStoriesAndNam = async (animalId) => {
   }
 }
 
-module.exports = { getAllAnimals, getStoriesAndNam }
+const createStories = async(animalId) => {
+  try{
+    const result = await db.query("INSERT INTO stories (animal_id, story) VALUES($1, $2) RETURNING *", [animalId, "I created a story1"]);
+    console.log("result", result)
+    return result.rows[0].story;
+  } catch (e) {
+    console.error("Error during creating stories:", e);
+    throw e;
+  }
+}
+
+module.exports = { getAllAnimals, getStoriesAndNam, createStories }

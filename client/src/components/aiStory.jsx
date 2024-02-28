@@ -6,7 +6,7 @@ import { storyContext } from "../providers/StoryProvider";
 const AiStory = () => {
   
   const { sortedAnimals } = useContext(selectContext);
-  const { stories, fetchStories } = useContext(storyContext);
+  const { stories, fetchStories, createStories } = useContext(storyContext);
   
   const [animalId, setAnimalId] = useState();
 
@@ -35,6 +35,9 @@ const AiStory = () => {
       return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
     }
   })
+  // need to also fix this bug to show one or another(fix stories table)
+
+  
 
   return (
     <div>
@@ -44,7 +47,7 @@ const AiStory = () => {
       </select>
       <button onClick={handleClick}>{clicked ? "Hide Stories" : "Show Stories"}</button>
       {clicked && storiesArray}
-      {clicked && <button>Create a story</button>}
+      {clicked && <button onClick={() => createStories(animalId)}>Create a story</button>}
     </div>
   )
 }
