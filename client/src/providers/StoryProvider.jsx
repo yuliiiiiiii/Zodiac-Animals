@@ -26,14 +26,13 @@ export default function StoryProvider(props) {
     axios.post('http://localhost:8080/animals/create', {
         id: animal_id
       })
-      .then((response) => {
-        console.log(response)
+      .then((res) => {
+        console.log("created story:",res.data)
       })
       .catch((error) => {
         console.log(error)
       })
   }
-  // need to build the server route!!! /animals/create
 
   const storyData = {
     stories,

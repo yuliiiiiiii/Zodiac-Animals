@@ -20,12 +20,19 @@ router.get('/ai/:id', async (req, res) => {
   } catch(e) {
     console.log("Type of animal_id:", typeof animal_id)
     console.error("Error during fetching stories:", e);
-    res.status(500).send("Server Error");
+    res.status(500).send("Server can't get the stories");
   }
 })
 
-router.post('/create', (req, res) => {
-  
+router.post('/create', async(req, res) => {
+  const animal_id = Number(req.body.id)
+  // console.log("animal_id:", animal_id)
+  try{
+    const newStory = await animalsQueries.createStories(animal_id)
+    res.status(200).json(newStory)
+  } catch(e) {
+    res.status(500).send("Server can't create stories");
+  }
 })
 
 module.exports = router;
