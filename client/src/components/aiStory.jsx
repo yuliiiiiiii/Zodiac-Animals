@@ -35,6 +35,7 @@ const AiStory = () => {
       return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
     }
   })
+  // need to also fix this bug to show one or another(fix stories table)
 
   
 
