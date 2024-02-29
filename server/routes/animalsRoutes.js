@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/ai/:id', async (req, res) => {
   const animal_id = Number(req.params.id);
   try{
-    console.log("Type of animal_id:", typeof animal_id)
+    console.log("animal_id:", animal_id)
     const storiesWithNam = await animalsQueries.getStoriesAndNam(animal_id);
     res.status(200).json(storiesWithNam);
   } catch(e) {

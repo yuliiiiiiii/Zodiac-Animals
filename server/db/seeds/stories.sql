@@ -1,14 +1,4 @@
 INSERT INTO stories (animal_id, story) 
   VALUES 
-(1, ''),
-(2, ''),
-(3, ''),
-(4, ''),
-(5, ''),
-(6, ''),
-(7, ''),
-(8, ''),
-(9, ''),
-(10, ''),
-(11, ''),
-(12, '');
+(8, 'The rate cheated and got the first'),
+(5, 'The rate jumped from ox head and got the first');
