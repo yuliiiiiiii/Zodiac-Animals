@@ -29,7 +29,7 @@ const AiStory = () => {
 
   const storiesArray = stories.map((story, index) => {
 
-    if (!stories) {
+    if (!story) {
       return <p key={index}> No story, please create a story </p>
     } else {
       return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
