@@ -25,7 +25,6 @@ const AiStory = () => {
   useEffect(() => {
     fetchStories(animalId);
   }, [animalId])
-  // can be an issue here. After update stories table see if it will trigger fectchStories()!!!!
 
   // check if stories is an empty array(means there's no story from the selected animal)
   const storiesArray = stories[0] 
