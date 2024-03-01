@@ -37,8 +37,8 @@ const createStories = async(animalId, data) => {
 const getAnimalName = async(animalId) => {
   try{
     const res = await db.query(`SELECT eng FROM animals WHERE id = ${animalId}`)
-    console.log("animalName:", res)
-    return res.rows[0]
+    console.log("---------------------------------animalName:", res.rows[0].eng)
+    return res.rows[0].eng
   } catch (e) {
     console.error("Error during getting animal name:", e);
     throw e;
