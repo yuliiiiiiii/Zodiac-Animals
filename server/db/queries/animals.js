@@ -34,4 +34,15 @@ const createStories = async(animalId, data) => {
   }
 }
 
-module.exports = { getAllAnimals, getStoriesAndNam, createStories }
+const getAnimalName = async(animalId) => {
+  try{
+    const res = await db.query(`SELECT eng FROM animals WHERE id = ${animalId}`)
+    console.log("animalName:", res)
+    return res.rows[0]
+  } catch (e) {
+    console.error("Error during getting animal name:", e);
+    throw e;
+  }
+}
+
+module.exports = { getAllAnimals, getAnimalName, getStoriesAndNam, createStories }
