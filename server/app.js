@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 //routes import
 const animalsRoutes = require('./routes/animalsRoutes');
+const storyRoutes = require('./routes/storyRoutes');
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 //put this AFTER app.use(cors(corsOptions))!!
 //link animalsRoutes, localhost:8080/animals
 app.use('/animals', animalsRoutes);
+app.use('/create', storyRoutes)
 
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
