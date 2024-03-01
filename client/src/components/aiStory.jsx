@@ -27,12 +27,17 @@ const AiStory = () => {
   }, [animalId])
   // can be an issue here. After update stories table see if it will trigger fectchStories()!!!!
 
-  //first to make sure stories is an array
+  // check if stories is an empty array(means there's no story from the selected animal)
   const storiesArray = stories[0] 
     ? stories.map((story, index) => {
       return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
     }) 
     : <p key={animalId}>No story, please create a story</p>
+
+  const handleCreate = () => {
+    createStories(animalId);
+    fetchStories(animalId)
+  }  
 
   return (
     <div>
@@ -42,7 +47,7 @@ const AiStory = () => {
       </select>
       <button onClick={handleClick}>{clicked ? "Hide Stories" : "Show Stories"}</button>
       {clicked && storiesArray}
-      {clicked && <button onClick={() => createStories(animalId)}>Create a story</button>}
+      {clicked && <button onClick={() => handleCreate()}>Create a story</button>}
     </div>
   )
 }
