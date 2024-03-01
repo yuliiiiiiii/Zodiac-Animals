@@ -24,15 +24,4 @@ router.get('/ai/:id', async (req, res) => {
   }
 })
 
-router.post('/create', async(req, res) => {
-  const animal_id = Number(req.body.id)
-  // console.log("animal_id:", animal_id)
-  try{
-    const newStory = await animalsQueries.createStories(animal_id)
-    res.status(200).json(newStory)
-  } catch(e) {
-    res.status(500).send("Server can't create stories");
-  }
-})
-
 module.exports = router;

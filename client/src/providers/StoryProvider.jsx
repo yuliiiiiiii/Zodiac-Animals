@@ -23,7 +23,7 @@ export default function StoryProvider(props) {
   }
 
   const createStories = (animal_id) => {
-    axios.post('http://localhost:8080/animals/create', {
+    axios.post('http://localhost:8080/create', {
         id: animal_id
       })
       .then((res) => {

@@ -23,9 +23,9 @@ const getStoriesAndNam = async (animalId) => {
   }
 }
 
-const createStories = async(animalId) => {
+const createStories = async(animalId, data) => {
   try{
-    const result = await db.query("INSERT INTO stories (animal_id, story) VALUES($1, $2) RETURNING *", [animalId, "I created a story1"]);
+    const result = await db.query("INSERT INTO stories (animal_id, story) VALUES($1, $2) RETURNING *", [animalId, data]);
     console.log("result", result)
     return result.rows[0].story;
   } catch (e) {
@@ -34,4 +34,15 @@ const createStories = async(animalId) => {
   }
 }
 
-module.exports = { getAllAnimals, getStoriesAndNam, createStories }
+const getAnimalName = async(animalId) => {
+  try{
+    const res = await db.query(`SELECT eng FROM animals WHERE id = ${animalId}`)
+    console.log("---------------------------------animalName:", res.rows[0].eng)
+    return res.rows[0].eng
+  } catch (e) {
+    console.error("Error during getting animal name:", e);
+    throw e;
+  }
+}
+
+module.exports = { getAllAnimals, getAnimalName, getStoriesAndNam, createStories }
