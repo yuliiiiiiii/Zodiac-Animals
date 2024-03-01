@@ -23,9 +23,9 @@ const getStoriesAndNam = async (animalId) => {
   }
 }
 
-const createStories = async(animalId) => {
+const createStories = async(animalId, data) => {
   try{
-    const result = await db.query("INSERT INTO stories (animal_id, story) VALUES($1, $2) RETURNING *", [animalId, "I created a story1"]);
+    const result = await db.query("INSERT INTO stories (animal_id, story) VALUES($1, $2) RETURNING *", [animalId, data]);
     console.log("result", result)
     return result.rows[0].story;
   } catch (e) {
