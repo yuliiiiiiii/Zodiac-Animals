@@ -27,17 +27,12 @@ const AiStory = () => {
   }, [animalId])
   // can be an issue here. After update stories table see if it will trigger fectchStories()!!!!
 
-  const storiesArray = stories.map((story, index) => {
-
-    if (!story) {
-      return <p key={index}> No story, please create a story </p>
-    } else {
+  //first to make sure stories is an array
+  const storiesArray = stories[0] 
+    ? stories.map((story, index) => {
       return <p key={index}> {story.eng.toUpperCase()} : {story.story} </p>
-    }
-  })
-  // Now this does not work if there is no story
-
-  
+    }) 
+    : <p key={animalId}>No story, please create a story</p>
 
   return (
     <div>
